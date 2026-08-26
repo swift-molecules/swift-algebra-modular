@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-algebra-modular-primitives",
+    name: "swift-algebra-modular",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,44 +13,44 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Algebra Modular Primitives",
-            targets: ["Algebra Modular Primitives"]
+            name: "Algebra Modular",
+            targets: ["Algebra Modular"]
         ),
         .library(
-            name: "Algebra Modular Primitives Test Support",
-            targets: ["Algebra Modular Primitives Test Support"]
+            name: "Algebra Modular Test Support",
+            targets: ["Algebra Modular Test Support"]
         ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-algebra-primitives.git",
+            url: "https://github.com/swift-molecules/swift-algebra.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-finite-primitives.git",
+            url: "https://github.com/swift-molecules/swift-finite.git",
             branch: "main"
         ),
     ],
     targets: [
         .target(
-            name: "Algebra Modular Primitives",
+            name: "Algebra Modular",
             dependencies: [
-                .product(name: "Algebra Field Primitives", package: "swift-algebra-primitives"),
-                .product(name: "Finite Primitives", package: "swift-finite-primitives"),
+                .product(name: "Algebra Field", package: "swift-algebra"),
+                .product(name: "Finite", package: "swift-finite"),
             ]
         ),
         .target(
-            name: "Algebra Modular Primitives Test Support",
+            name: "Algebra Modular Test Support",
             dependencies: [
-                "Algebra Modular Primitives"
+                "Algebra Modular"
             ],
             path: "Tests/Support"
         ),
         .testTarget(
-            name: "Algebra Modular Primitives Tests",
+            name: "Algebra Modular Tests",
             dependencies: [
-                "Algebra Modular Primitives",
-                "Algebra Modular Primitives Test Support",
+                "Algebra Modular",
+                "Algebra Modular Test Support",
             ]
         ),
     ],

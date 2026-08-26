@@ -1,4 +1,4 @@
-import Algebra_Modular_Primitives
+import Algebra_Modular
 import Testing
 
 @Suite struct `Algebra.Z Tests` {
