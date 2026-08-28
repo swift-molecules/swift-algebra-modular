@@ -16,18 +16,42 @@ let package = Package(
             name: "Algebra Modular",
             targets: ["Algebra Modular"]
         ),
-        .library(
-            name: "Algebra Modular Test Support",
-            targets: ["Algebra Modular Test Support"]
-        ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-algebra.git",
+            url: "https://github.com/swift-atoms/swift-algebra.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-finite.git",
+            url: "https://github.com/swift-atoms/swift-cardinal.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-atoms/swift-ordinal.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-atoms/swift-tagged.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-molecules/swift-cardinal-hash.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-molecules/swift-cardinal-carrier.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-molecules/swift-cardinal-property.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-molecules/swift-ordinal-cardinal.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-molecules/swift-ordinal-hash.git",
             branch: "main"
         ),
     ],
@@ -35,22 +59,21 @@ let package = Package(
         .target(
             name: "Algebra Modular",
             dependencies: [
-                .product(name: "Algebra Field", package: "swift-algebra"),
-                .product(name: "Finite", package: "swift-finite"),
-            ]
-        ),
-        .target(
-            name: "Algebra Modular Test Support",
-            dependencies: [
-                "Algebra Modular"
+                .product(name: "Algebra", package: "swift-algebra"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Ordinal", package: "swift-ordinal"),
+                .product(name: "Tagged", package: "swift-tagged"),
+                .product(name: "Cardinal Hash", package: "swift-cardinal-hash"),
+                .product(name: "Cardinal Carrier", package: "swift-cardinal-carrier"),
+                .product(name: "Cardinal Property", package: "swift-cardinal-property"),
+                .product(name: "Ordinal Cardinal", package: "swift-ordinal-cardinal"),
+                .product(name: "Ordinal Hash", package: "swift-ordinal-hash"),
             ],
-            path: "Tests/Support"
         ),
         .testTarget(
             name: "Algebra Modular Tests",
             dependencies: [
                 "Algebra Modular",
-                "Algebra Modular Test Support",
             ]
         ),
     ],

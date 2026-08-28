@@ -1,3 +1,10 @@
+public import Algebra
+public import struct Cardinal.Cardinal
+public import Cardinal_Carrier
+public import Ordinal_Cardinal
+public import struct Ordinal.Ordinal
+public import struct Tagged.Tagged
+
 extension Algebra {
 
     public typealias Z<let n: Int> = Tagged<Residue<n>, Ordinal>

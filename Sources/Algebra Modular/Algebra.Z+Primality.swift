@@ -1,8 +1,13 @@
+public import Algebra
+public import struct Cardinal.Cardinal
+public import struct Ordinal.Ordinal
+public import struct Tagged.Tagged
+
 extension Tagged where Tag: Algebra.Residual, Underlying == Ordinal {
 
     @inlinable
     package static func isPrime(_ capacity: Cardinal) -> Bool {
-        let n = Int(bitPattern: capacity)
+        let n = Int(bitPattern: capacity.rawValue)
         guard n >= 2 else { return false }
         guard n >= 4 else { return true }
         guard !n.isMultiple(of: 2) else { return false }
@@ -16,8 +21,8 @@ extension Tagged where Tag: Algebra.Residual, Underlying == Ordinal {
 
     @inlinable
     package static func inverse(_ a: Ordinal, modulus: Cardinal) -> Ordinal {
-        let m = Int(bitPattern: modulus)
-        var oldR = Int(bitPattern: a)
+        let m = Int(bitPattern: modulus.rawValue)
+        var oldR = Int(bitPattern: a.rawValue)
         var r = m
         var oldS = 1
         var s = 0

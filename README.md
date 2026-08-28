@@ -8,7 +8,7 @@ Integer modular arithmetic for Swift — the residue class Z/nZ as a compile-tim
 
 ## Quick Start
 
-`Algebra.Z<n>` is the integers modulo `n` with the modulus carried in the type: it is a `Tagged<Algebra.Residue<n>, Ordinal>`, so it gains `Finite.Enumerable`, `Hashable`, `Comparable`, and `Sendable` for free, and construction is bounds-checked against `[0, n)`.
+`Algebra.Z<n>` is the integers modulo `n` with the modulus carried in the type: it is a `Tagged<Algebra.Residue<n>, Ordinal>`, and construction is bounds-checked against `[0, n)`. The seam-owned `Algebra.Residual` protocol supplies the static `Cardinal` capacity for each residue tag.
 
 ```swift
 import Algebra_Modular
@@ -67,18 +67,17 @@ dependencies: [
 )
 ```
 
-Requires Swift 6.3.1 and macOS 26 / iOS 26 / tvOS 26 / watchOS 26 / visionOS 26 (or the matching Linux / Windows toolchain).
+Requires Swift 6.4 and macOS 27 / iOS 27 / tvOS 27 / watchOS 27 / visionOS 27 (or the matching Linux / Windows toolchain).
 
 ---
 
 ## Architecture
 
-One library product, building on the `Algebra.Field` algebra witnesses and the `Finite` / `Ordinal` / `Cardinal` primitives.
+One library product, building on the consolidated `Algebra` witnesses and the `Tagged`, `Ordinal`, and `Cardinal` primitives plus their narrow carrier, property, and hash seams.
 
 | Product | Target | Purpose |
 |---------|--------|---------|
 | `Algebra Modular` | `Sources/Algebra Modular/` | The compile-time residue class `Algebra.Z<n>` and its arithmetic, the runtime `Algebra.Modular` namespace and its validated `Modulus`, and the `ring` / `semiring` / `field()` algebraic-structure witnesses. |
-| `Algebra Modular Test Support` | `Tests/Support/` | Re-exports the main target for test consumers. |
 
 Foundation-free.
 
@@ -88,7 +87,7 @@ Foundation-free.
 
 | Platform | Status |
 |----------|--------|
-| macOS 26 | Full support |
+| macOS 27 | Full support |
 | Linux | Full support |
 | Windows | Full support |
 | iOS / tvOS / watchOS / visionOS | Supported |

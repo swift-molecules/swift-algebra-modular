@@ -1,3 +1,7 @@
+public import Algebra
+public import struct Cardinal.Cardinal
+import Cardinal_Hash
+
 extension Algebra.Modular {
 
     public struct Modulus: Hashable, Comparable, Sendable {
@@ -6,7 +10,7 @@ extension Algebra.Modular {
 
         @inlinable
         public init(_ cardinal: Cardinal) throws(Self.Error) {
-            guard cardinal > .zero else { throw .zero }
+            guard cardinal > Cardinal(0) else { throw .zero }
             self.cardinal = cardinal
         }
 
