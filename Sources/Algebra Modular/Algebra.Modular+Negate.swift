@@ -1,6 +1,9 @@
 public import Algebra
 public import struct Cardinal.Cardinal
-public import Cardinal_Property
+public import Addition
+public import Cardinal
+public import Property
+public import Subtraction
 public import Ordinal_Cardinal
 public import struct Ordinal.Ordinal
 
