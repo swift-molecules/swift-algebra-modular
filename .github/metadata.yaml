@@ -1,5 +1,3 @@
-# .github/metadata.yaml
-# Triaged 2026-04-29 — anomaly-fix pass after wave-4 PR-branch triage didn't apply.
 description: "Compile-time-tagged modular arithmetic (Z/nZ) with ring, semiring, and field witnesses for Swift."
 topics:
   - primitives
