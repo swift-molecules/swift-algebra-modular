@@ -19,7 +19,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-atoms/swift-addition.git", branch: "main"),
-        .package(url: "https://github.com/swift-atoms/swift-hash.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-property.git", branch: "main"),
         .package(url: "https://github.com/swift-atoms/swift-subtraction.git", branch: "main"),
 
@@ -49,7 +48,6 @@ let package = Package(
             name: "Algebra Modular",
             dependencies: [
                 .product(name: "Addition", package: "swift-addition"),
-                .product(name: "Hash", package: "swift-hash"),
                 .product(name: "Property", package: "swift-property"),
                 .product(name: "Subtraction", package: "swift-subtraction"),
 

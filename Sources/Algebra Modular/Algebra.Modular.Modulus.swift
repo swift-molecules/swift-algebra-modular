@@ -1,7 +1,6 @@
 public import Algebra
 public import struct Cardinal.Cardinal
 import Cardinal
-import Hash
 
 extension Algebra.Modular {
 

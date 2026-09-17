@@ -1,6 +1,5 @@
 public import Algebra
 public import struct Ordinal.Ordinal
-import Hash
 import Ordinal
 public import struct Tagged.Tagged
 
