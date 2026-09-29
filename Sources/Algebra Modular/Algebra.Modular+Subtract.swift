@@ -4,7 +4,9 @@ public import Cardinal
 public import Addition
 public import Property
 public import Subtraction
-public import Ordinal_Cardinal
+public import Carrier
+public import Ordinal
+public import Tagged
 public import struct Ordinal.Ordinal
 
 extension Algebra.Modular {

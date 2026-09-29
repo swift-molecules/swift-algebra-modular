@@ -38,10 +38,7 @@ let package = Package(
             url: "https://github.com/swift-atoms/swift-tagged.git",
             branch: "main"
         ),
-        .package(
-            url: "https://github.com/swift-molecules/swift-ordinal-cardinal.git",
-            branch: "main"
-        ),
+        .package(url: "https://github.com/swift-atoms/swift-carrier.git", branch: "main"),
     ],
     targets: [
         .target(
@@ -55,7 +52,7 @@ let package = Package(
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Ordinal", package: "swift-ordinal"),
                 .product(name: "Tagged", package: "swift-tagged"),
-                .product(name: "Ordinal Cardinal", package: "swift-ordinal-cardinal"),
+                .product(name: "Carrier", package: "swift-carrier"),
             ],
         ),
         .testTarget(
