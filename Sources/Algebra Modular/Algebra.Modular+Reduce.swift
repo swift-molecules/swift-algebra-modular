@@ -1,8 +1,8 @@
 public import Algebra
 public import Cardinal
-public import Carrier
+internal import Carrier
 public import Ordinal
-public import Tagged
+internal import Tagged
 public import struct Ordinal.Ordinal
 
 extension Algebra.Modular {

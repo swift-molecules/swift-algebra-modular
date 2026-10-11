@@ -1,9 +1,9 @@
 public import Algebra
 public import struct Cardinal.Cardinal
-public import Addition
+internal import Addition
 public import Cardinal
-public import Property
-public import Subtraction
+internal import Property
+internal import Subtraction
 public import struct Ordinal.Ordinal
 public import struct Tagged.Tagged
 

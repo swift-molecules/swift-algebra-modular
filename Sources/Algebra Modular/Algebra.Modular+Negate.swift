@@ -1,12 +1,12 @@
 public import Algebra
 public import struct Cardinal.Cardinal
-public import Addition
+internal import Addition
 public import Cardinal
-public import Property
-public import Subtraction
-public import Carrier
+internal import Property
+internal import Subtraction
+internal import Carrier
 public import Ordinal
-public import Tagged
+internal import Tagged
 public import struct Ordinal.Ordinal
 
 extension Algebra.Modular {

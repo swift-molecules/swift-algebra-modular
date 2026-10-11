@@ -2,7 +2,7 @@ public import Algebra
 
 extension Algebra.Modular.Modulus {
 
-    public enum Error: Swift.Error, Hashable, Sendable {
+    public enum Error: Swift::Error, Hashable, Sendable {
 
         case zero
     }
