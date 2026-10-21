@@ -15,7 +15,7 @@ let package = Package(
         .library(
             name: "Algebra Modular",
             targets: ["Algebra Modular"]
-        ),
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/swift-atoms/swift-addition.git", branch: "main"),
@@ -58,7 +58,7 @@ let package = Package(
         .testTarget(
             name: "Algebra Modular Tests",
             dependencies: [
-                .target(name: "Algebra Modular"),
+                .target(name: "Algebra Modular")
             ]
         ),
     ],
@@ -66,14 +66,15 @@ let package = Package(
 )
 
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
-    target.swiftSettings = (target.swiftSettings ?? []) + [
-        .strictMemorySafety(),
-        .enableUpcomingFeature("ExistentialAny"),
-        .enableUpcomingFeature("InternalImportsByDefault"),
-        .enableUpcomingFeature("MemberImportVisibility"),
-        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
-        .enableUpcomingFeature("InferIsolatedConformances"),
-        .enableExperimentalFeature("Lifetimes"),
-        .treatAllWarnings(as: .error),
-    ]
+    target.swiftSettings =
+        (target.swiftSettings ?? []) + [
+            .strictMemorySafety(),
+            .enableUpcomingFeature("ExistentialAny"),
+            .enableUpcomingFeature("InternalImportsByDefault"),
+            .enableUpcomingFeature("MemberImportVisibility"),
+            .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+            .enableUpcomingFeature("InferIsolatedConformances"),
+            .enableExperimentalFeature("Lifetimes"),
+            .treatAllWarnings(as: .error),
+        ]
 }

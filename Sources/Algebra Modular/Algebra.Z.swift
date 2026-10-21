@@ -1,9 +1,10 @@
 public import Algebra
-public import struct Cardinal.Cardinal
 public import Cardinal
 internal import Carrier
 public import Ordinal
 public import Tagged
+
+public import struct Cardinal.Cardinal
 public import struct Ordinal.Ordinal
 public import struct Tagged.Tagged
 
