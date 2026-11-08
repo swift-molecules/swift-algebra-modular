@@ -1,4 +1,4 @@
-@_exported import Algebra
-@_exported import Cardinal
-@_exported import Ordinal
-@_exported import Tagged
+@_exported public import Algebra
+@_exported public import Cardinal
+@_exported public import Ordinal
+@_exported public import Tagged
