@@ -1,10 +1,7 @@
-internal import Addition
 public import Algebra
 public import Cardinal
 internal import Carrier
 public import Ordinal
-internal import Property
-internal import Subtraction
 internal import Tagged
 
 public import struct Cardinal.Cardinal
@@ -29,9 +26,9 @@ extension Algebra.Modular {
 
     @inlinable
     public static func negate(_ a: Ordinal, modulus: Modulus) -> Ordinal {
-        guard a.rawValue != UInt.zero else { return a }
-        let result = modulus.cardinal.subtract.saturating(Cardinal(a))
-        return Ordinal(result)
+        let m = modulus.cardinal.rawValue
+        let r = a.rawValue % m
+        return Ordinal(r == UInt.zero ? r : m - r)
     }
 }
 
@@ -39,9 +36,7 @@ extension Algebra.Modular {
 
     @inlinable
     public static func predecessor(_ a: Ordinal, modulus: Modulus) -> Ordinal {
-
-        let nMinusOne = modulus.cardinal.subtract.saturating(Cardinal(1))
-        return (a + nMinusOne) % modulus.cardinal
+        subtract(a, Ordinal(UInt(1)), modulus: modulus)
     }
 }
 
@@ -69,6 +64,6 @@ extension Algebra.Modular {
 
     @inlinable
     public static func successor(_ a: Ordinal, modulus: Modulus) -> Ordinal {
-        (a + Cardinal(1)) % modulus.cardinal
+        add(a, Ordinal(UInt(1)), modulus: modulus)
     }
 }
