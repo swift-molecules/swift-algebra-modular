@@ -90,3 +90,20 @@ extension `Algebra.Z Tests`.Integration {
         )
     }
 }
+
+extension `Algebra.Z Tests`.`Edge Case` {
+
+    @Test
+    func `a residue class with a zero modulus traps`() async {
+        await #expect(processExitsWith: .failure) {
+            _ = Algebra.Z<0>.zero
+        }
+    }
+
+    @Test
+    func `a residue class with a negative modulus traps`() async {
+        await #expect(processExitsWith: .failure) {
+            _ = Algebra.Z< -3>.one
+        }
+    }
+}

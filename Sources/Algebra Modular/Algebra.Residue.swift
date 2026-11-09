@@ -10,5 +10,8 @@ extension Algebra {
 extension Algebra.Residue {
 
     @inlinable
-    public static var capacity: Cardinal { Cardinal(UInt(n)) }
+    public static var capacity: Cardinal {
+        precondition(n > 0, "Algebra.Residue<n> requires a positive modulus n")
+        return Cardinal(UInt(n))
+    }
 }

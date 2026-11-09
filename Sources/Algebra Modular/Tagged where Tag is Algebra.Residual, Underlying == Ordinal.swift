@@ -12,7 +12,7 @@ extension Tagged where Tag: Algebra.Residual, Underlying == Ordinal {
 
     @inlinable
     public static var zero: Self {
-        Self(_unchecked: Ordinal.zero)
+        Self(_unchecked: Ordinal.zero % Tag.capacity)
     }
 
     @inlinable
